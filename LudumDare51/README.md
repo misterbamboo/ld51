@@ -6,4 +6,4 @@
 - Léonard
 - Zackary
 - Raphaël
-- Nicolas
+- Nicolas Charette-Naud
