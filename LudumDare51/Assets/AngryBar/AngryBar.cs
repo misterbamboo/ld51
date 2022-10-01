@@ -1,9 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AngryBar : MonoBehaviour
+public interface IAngryBar
+{
+
+}
+
+public class AngryBar : MonoBehaviour, IAngryBar
 {
     [SerializeField]
     private Slider slider;
@@ -20,7 +24,7 @@ public class AngryBar : MonoBehaviour
     {
         sliderFillImage = slider.fillRect.GetComponent<Image>();
         particleSystem = slider.GetComponentInChildren<ParticleSystem>();
-        
+
         animator = GetComponentInChildren<Animator>();
 
         var settings = particleSystem.main;

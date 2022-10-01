@@ -7,6 +7,7 @@ public interface IBoss
 
 public class Boss : MonoBehaviour, IBoss
 {
+    [SerializeField] IAngryBar angryBar;
     [SerializeField] Rigidbody bossBody;
     private float initialYPos;
 
