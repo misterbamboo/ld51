@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float accelVelocitySpeed = 2f;
     private float slowDownVelocitySpeed = 1.5f;
     private float movementSpeed = 4f;
+    private bool accelerating;
 
     void Update()
     {
@@ -22,8 +23,12 @@ public class PlayerMovement : MonoBehaviour
             var lastPos = transform.position;
             var newPos = lastPos + directionVector;
             transform.position = newPos;
+            var diff = (newPos - lastPos);
 
-            transform.LookAt(newPos + (newPos - lastPos));
+            if (accelerating)
+            {
+                transform.rotation = Quaternion.LookRotation(diff);
+            }
         }
     }
 
@@ -31,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     {
         var xInput = Input.GetAxisRaw("Horizontal");
         var zInput = Input.GetAxisRaw("Vertical");
+        accelerating = false;
+        accelerating = xInput != 0 || zInput != 0;
 
         var updatedVelocity = velocity;
         updatedVelocity.x = UpdateVelocity(velocity.x, xInput);
