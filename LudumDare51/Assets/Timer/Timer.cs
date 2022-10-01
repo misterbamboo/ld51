@@ -73,7 +73,7 @@ public class Timer : MonoBehaviour
             return;
         }
 
-        var nbSecondInOneMinute = 60;
+        var nbSecondInOneMinute = 5;
         var oneMinuteHavePassed = secondsPassed % nbSecondInOneMinute == 0;
         if (oneMinuteHavePassed)
         {
