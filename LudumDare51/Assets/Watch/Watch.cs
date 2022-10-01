@@ -13,12 +13,17 @@ public class Watch : MonoBehaviour
     [SerializeField]
     private GameObject hourHand;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         Timer.Instance.OnSecondPassed += RotateSecondHand;   
         Timer.Instance.OnMinutePassed += RotateMinuteHand;
         Timer.Instance.OnHourPassed += RotateHourHand;
+        Timer.Instance.OnTenSecondsPassed += StartAnim;
+
+        animator = GetComponent<Animator>();
     }
 
     void RotateSecondHand()
@@ -34,5 +39,18 @@ public class Watch : MonoBehaviour
     void RotateHourHand()
     {
         hourHand.transform.Rotate(0, 0, -6);
+    }
+
+    void StartAnim()
+    {
+        animator.SetBool("Play", true);
+        StartCoroutine(StopAnim());
+    }
+
+    // Coroutine that wait two real seconds and then set the animation to false
+    IEnumerator StopAnim()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        animator.SetBool("Play", false);
     }
 }
