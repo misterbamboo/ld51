@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class TimerTest : MonoBehaviour
 {
+    int secondsPassed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindObjectOfType<Timer>().OnTimerDone += TimerDone;
+        GameObject.FindObjectOfType<Timer>().OnTenSecondsPassed += TimerDone;
         GameObject.FindObjectOfType<Timer>().OnSecondPassed += SecondPassed;
     }
 
     void SecondPassed()
     {
-        Debug.Log("Second passed");
+        secondsPassed++;
+        // Debug.Log($"{secondsPassed} Second passed");
     }
 
     void TimerDone()
     {
-        Debug.Log($"Timer is done! {System.DateTime.Now.ToString()}");
+        Debug.Log("10 seconds passed");
     }
 }
