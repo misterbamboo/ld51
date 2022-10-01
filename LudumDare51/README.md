@@ -5,5 +5,5 @@
 - Elise
 - Léonard
 - Zackary
-- Raphaël
+- Raphaël Fortin
 - Nicolas Charette-Naud
