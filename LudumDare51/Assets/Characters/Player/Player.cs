@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public const string Tag = "Player";
     private List<IPickable> pickables = new List<IPickable>();
+    private IBoss bossNear;
 
     [SerializeField] Transform pickedLocation;
     [SerializeField] GameObject pickedItem;
@@ -38,6 +39,25 @@ public class Player : MonoBehaviour
     private bool HandIsFull() => pickedItem != null;
 
     private void DropItem()
+    {
+        if (IsBossNear())
+        {
+            GiveItemToBoss();
+        }
+        else
+        {
+            DropItemNowere();
+        }
+    }
+
+    private void GiveItemToBoss()
+    {
+        bossNear.GiveCoffee(pickedItem);
+    }
+
+    private bool IsBossNear() => bossNear != null;
+
+    private void DropItemNowere()
     {
         var pickedItemBody = pickedItem.GetComponent<Rigidbody>();
         if (pickedItemBody != null)
@@ -91,7 +111,16 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var pickable = other.GetComponent<IPickable>();
-        pickables.Add(pickable);
+        if (pickable != null)
+        {
+            pickables.Add(pickable);
+        }
+
+        var boss = other.GetComponent<IBoss>();
+        if (boss != null)
+        {
+            bossNear = boss;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -100,6 +129,12 @@ public class Player : MonoBehaviour
         if (pickables.Contains(pickable))
         {
             pickables.Remove(pickable);
+        }
+
+        var boss = other.GetComponent<IBoss>();
+        if (boss != null)
+        {
+            bossNear = null;
         }
     }
 }

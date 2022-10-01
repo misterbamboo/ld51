@@ -21,10 +21,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_SHaderTest
-  m_Shader: {fileID: -6465566751694194690, guid: edd7abf643fa4bc4e8561d4c280c97cf, type: 3}
-  m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING
-    TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SHADOW_LIGHT_COLOR TCP2_SPECULAR TCP2_UV_NORMALS_FULL
-    _GLOSSYREFLECTIONS_OFF
+  m_Shader: {fileID: -6465566751694194690, guid: df5bb027d94a6c44bb32b3c31ec1303f, type: 3}
+  m_ShaderKeywords: TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING TCP2_RIM_LIGHTING_LIGHTMASK
+    TCP2_SHADOW_LIGHT_COLOR TCP2_SPECULAR TCP2_UV_NORMALS_FULL
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -135,7 +134,6 @@ Material:
     - _MatCapMaskChannel: 0
     - _MatCapType: 0
     - _Metallic: 0
-    - _Mode: 0
     - _NormalsSource: 0
     - _NormalsUVType: 0
     - _OcclusionChannel: 0
@@ -154,9 +152,7 @@ Material:
     - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmooth: 0.2
-    - _RampSmoothAdd: 0.75
-    - _RampSmoothing: 0.499
+    - _RampSmoothing: 0.1
     - _RampThreshold: 0.75
     - _RampType: 0
     - _ReceiveShadows: 1
@@ -164,28 +160,20 @@ Material:
     - _ReflectionMapType: 0
     - _ReflectionSmoothness: 0.5
     - _RenderingMode: 0
-    - _RimMax: 0.99
-    - _RimMin: 0.76
-    - _RimStrength: 0.5
+    - _RimMax: 1
+    - _RimMin: 0.5
     - _ShadowColorLightAtten: 1
     - _SingleIndirectColor: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecBlend: 1
-    - _SpecSmooth: 1
     - _SpecularHighlights: 1
     - _SpecularMapType: 0
-    - _SpecularRoughness: 0.436
+    - _SpecularRoughness: 0.5
     - _SpecularToonSize: 0.25
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
     - _SrcBlend: 1
     - _Surface: 0
-    - _TCP2_DISABLE_WRAPPED_LIGHT: 1
-    - _TCP2_RAMPTEXT: 0
-    - _TCP2_SPEC_TOON: 0
-    - _TCP2_STYLIZED_FRESNEL: 0
-    - _UVSec: 0
     - _UseAlphaTest: 0
     - _UseEmission: 0
     - _UseFresnelReflections: 1
@@ -194,7 +182,7 @@ Material:
     - _UseMobileMode: 0
     - _UseNormalMap: 0
     - _UseOcclusion: 0
-    - _UseOutline: 0
+    - _UseOutline: 1
     - _UseReflections: 0
     - _UseRim: 1
     - _UseRimLightMask: 1
@@ -203,7 +191,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.9137255, g: 0.59521675, b: 0.14117648, a: 1}
+    - _BaseColor: {r: 1, g: 0.62102604, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
@@ -211,7 +199,7 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.5}
-    - _SColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   m_BuildTextureStacks: []
