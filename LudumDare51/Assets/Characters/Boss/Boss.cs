@@ -7,9 +7,11 @@ public interface IBoss
 
 public class Boss : MonoBehaviour, IBoss
 {
-    [SerializeField] IAngryBar angryBar;
+    [SerializeField] AngryBar _angryBar;
     [SerializeField] Rigidbody bossBody;
     private float initialYPos;
+
+    private IAngryBar AngryBar => _angryBar;
 
     void Start()
     {
@@ -29,6 +31,6 @@ public class Boss : MonoBehaviour, IBoss
     public void GiveCoffee(GameObject pickedItem)
     {
         Destroy(pickedItem.gameObject);
-        print("Mmmh ... Coffee !");
+        AngryBar.LessAngry();
     }
 }

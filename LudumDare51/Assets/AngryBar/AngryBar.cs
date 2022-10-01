@@ -1,16 +1,18 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public interface IAngryBar
 {
-
+    event Action OnAngryBarFull;
+    void LessAngry();
 }
 
 public class AngryBar : MonoBehaviour, IAngryBar
 {
-    [SerializeField]
-    private Slider slider;
+    public event Action OnAngryBarFull;
+    [SerializeField] private Slider slider;
 
     private Image sliderFillImage;
     private ParticleSystem particleSystem;
@@ -33,6 +35,19 @@ public class AngryBar : MonoBehaviour, IAngryBar
         GameObject.FindObjectOfType<Timer>().OnTenSecondsPassed += MoreAngry;
     }
 
+    private void Update()
+    {
+        if(slider.value >= 1)
+        {
+            OnAngryBarFull?.Invoke();
+        }
+    }
+
+    public void LessAngry()
+    {
+        StartCoroutine(LerpSliderValue(slider.value, slider.value - 0.10f, 2f));
+    }
+
     void MoreAngry()
     {
         // lerp slider value to +10% of current value in 2 seconds
@@ -49,7 +64,6 @@ public class AngryBar : MonoBehaviour, IAngryBar
             slider.value = Mathf.Lerp(startValue, endValue, time / duration);
             yield return null;
         }
-
     }
 
     private void ManageColor()
