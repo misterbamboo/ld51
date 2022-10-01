@@ -130,7 +130,7 @@ Animator:
   m_GameObject: {fileID: 5989843206224364431}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b681682b52020f47af8791c536ebf32, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 380484812115579938, guid: 283e6e66b46f0ce4990a79ef9870be1c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 386
+      value: -386
       objectReference: {fileID: 0}
     - target: {fileID: 380484812115579938, guid: 283e6e66b46f0ce4990a79ef9870be1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238409637371194508, guid: 01109b3ac0d6b9e429aad466626491dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 386
+      value: -386
       objectReference: {fileID: 0}
     - target: {fileID: 3238409637371194508, guid: 01109b3ac0d6b9e429aad466626491dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8355108130459850850, guid: c4bcf1cc553e90649a2e9da51c36a11f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 386
+      value: -386
       objectReference: {fileID: 0}
     - target: {fileID: 8355108130459850850, guid: c4bcf1cc553e90649a2e9da51c36a11f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -568,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8367387918943378922, guid: f4bcbb75295c6d241bae135b2c6522d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 386
+      value: -386
       objectReference: {fileID: 0}
     - target: {fileID: 8367387918943378922, guid: f4bcbb75295c6d241bae135b2c6522d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
