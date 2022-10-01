@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Rigidbody playerBody;
+
     private Vector3 velocity;
-    private float accelVelocitySpeed = 2f;
-    private float slowDownVelocitySpeed = 1.5f;
-    private float movementSpeed = 4f;
+    private float accelVelocitySpeed = 3f;
+    private float slowDownVelocitySpeed = 3f;
+    private float movementSpeed = 3.5f;
     private bool accelerating;
+    private Quaternion targetRotation;
 
     void Update()
     {
@@ -17,17 +20,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        playerBody.velocity = Vector3.zero;
+        playerBody.angularVelocity = Vector3.zero;
+
         var directionVector = DirectionVector();
         if (directionVector != Vector3.zero)
         {
-            var lastPos = transform.position;
-            var newPos = lastPos + directionVector;
-            transform.position = newPos;
-            var diff = (newPos - lastPos);
+            playerBody.MovePosition(playerBody.position + directionVector);
 
             if (accelerating)
             {
-                transform.rotation = Quaternion.LookRotation(diff);
+                var lastPos = playerBody.position;
+                var newPos = lastPos + directionVector;
+                var diff = (newPos - lastPos);
+                targetRotation = Quaternion.LookRotation(diff);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
             }
         }
     }
