@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4136330dba6853b46898d16ad9060178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coffeePrefab: {fileID: 6971064696827203592, guid: d6e074ae243f9d94eb91c3b142048a69, type: 3}
   itemsToShowWhenPlayerNearby:
   - {fileID: 524077384732738914}
   isPlayerNear: 0

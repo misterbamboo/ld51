@@ -11,6 +11,12 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 3.5f;
     private bool accelerating;
     private Quaternion targetRotation;
+    private float targetYPos;
+
+    private void Start()
+    {
+        targetYPos = playerBody.position.y;
+    }
 
     void Update()
     {
@@ -26,7 +32,9 @@ public class PlayerMovement : MonoBehaviour
         var directionVector = DirectionVector();
         if (directionVector != Vector3.zero)
         {
-            playerBody.MovePosition(playerBody.position + directionVector);
+            var targetPos = playerBody.position + directionVector;
+            targetPos.y = targetYPos;
+            playerBody.MovePosition(targetPos);
 
             if (accelerating)
             {

@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class CoffeeMachine : MonoBehaviour
+public class CoffeeMachine : MonoBehaviour, IPickable
 {
+    [SerializeField] GameObject coffeePrefab;
     [SerializeField] GameObject[] itemsToShowWhenPlayerNearby;
     public bool isPlayerNear = false;
 
@@ -37,5 +38,10 @@ public class CoffeeMachine : MonoBehaviour
         {
             itemsToShowWhenPlayerNearby[i].SetActive(isPlayerNear);
         }
+    }
+
+    public GameObject PickObject()
+    {
+        return Instantiate(coffeePrefab);
     }
 }
