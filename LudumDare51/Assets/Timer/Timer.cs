@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     public delegate void MinutePassed();
     public event MinutePassed OnMinutePassed;
 
+    public event Action On5MinutesPassed;
+
     public delegate void HourPassed();
     public event HourPassed OnHourPassed;
 
@@ -54,6 +56,8 @@ public class Timer : MonoBehaviour
 
             HandleMinute();
 
+            Handle5Minutes();
+
             HandleHour();
         }
     }
@@ -78,6 +82,21 @@ public class Timer : MonoBehaviour
         if (oneMinuteHavePassed)
         {
             OnMinutePassed();
+        }
+    }
+
+    private void Handle5Minutes()
+    {
+        if (On5MinutesPassed == null)
+        {
+            return;
+        }
+
+        var nbSecondIn5Minutes = 300;
+        var fiveMinutesHavePassed = secondsPassed % nbSecondIn5Minutes == 0;
+        if (fiveMinutesHavePassed)
+        {
+            On5MinutesPassed();
         }
     }
 

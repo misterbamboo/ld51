@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
+    [SerializeField] Timer timer;
     [SerializeField] Boss boss;
     [SerializeField] Watch watch;
     [SerializeField] Transform bossLosePosition;
@@ -19,6 +22,12 @@ public class CameraController : MonoBehaviour
         loseCamera.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
         angryBar.OnAngryBarFull += AngryBar_OnAngryBarFull;
+        timer.On5MinutesPassed += Timer_On5MinutesPassed;
+    }
+
+    private void Timer_On5MinutesPassed()
+    {
+        Win();
     }
 
     private void AngryBar_OnAngryBarFull()
@@ -38,5 +47,12 @@ public class CameraController : MonoBehaviour
 
         mainCamera.gameObject.SetActive(false);
         loseCamera.gameObject.SetActive(true);
+    }
+
+    private void Win()
+    {
+        watch.gameObject.SetActive(false);
+        mainCamera.gameObject.SetActive(false);
+        winCamera.gameObject.SetActive(true);
     }
 }
