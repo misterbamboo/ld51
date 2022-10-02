@@ -10,7 +10,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 50
+  m_Radius: 35.29
   m_Height: 175
   m_Direction: 1
   m_Center: {x: 0, y: 58, z: 0}
@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 7665129238813386423}
   - component: {fileID: 7423159020131924881}
   - component: {fileID: 987720755931775577}
-  - component: {fileID: 299746370270964165}
+  - component: {fileID: 6980764903752958040}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -92,7 +92,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &299746370270964165
+--- !u!114 &6980764903752958040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8955215242024914714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f5523ed059dce4abf0d09b6a794e87, type: 3}
+  m_Script: {fileID: 11500000, guid: a499b81a443dace41be947769144530d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedPerUnit: 2
+  npcPath: {fileID: 0}
+  keepNPCPosY: 1
 --- !u!1001 &7379752455991405017
 PrefabInstance:
   m_ObjectHideFlags: 0

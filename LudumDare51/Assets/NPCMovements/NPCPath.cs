@@ -1,16 +1,18 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class NPCPath : MonoBehaviour
 {
+    public event Action OnPathChanged;
+
     [SerializeField] Transform[] quadraticBezierPath;
     [SerializeField] float resolution = 10;
 
     private void OnDrawGizmos()
     {
-        var path = ComputePath();
+        GetChildren();
+        var path = GeneratePath();
         Vector3 lastPoint = Vector3.one;
         foreach (var point in path)
         {
@@ -21,13 +23,47 @@ public class NPCPath : MonoBehaviour
             }
             else
             {
-                Debug.DrawLine(lastPoint, point, Color.green);
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(lastPoint, point);
                 lastPoint = point;
             }
         }
     }
 
-    private Vector3[] ComputePath()
+    private void Start()
+    {
+        GetChildren();
+    }
+
+    private void GetChildren()
+    {
+        List<Transform> children = new List<Transform>();
+        foreach (Transform child in transform)
+        {
+            children.Add(child);
+        }
+        quadraticBezierPath = children.ToArray();
+    }
+
+    private void Update()
+    {
+        bool pathChanged = false;
+        foreach (var pathTransform in quadraticBezierPath)
+        {
+            if (pathTransform.hasChanged)
+            {
+                pathChanged = true;
+                pathTransform.hasChanged = false;
+            }
+        }
+
+        if (pathChanged)
+        {
+            OnPathChanged?.Invoke();
+        }
+    }
+
+    public Vector3[] GeneratePath()
     {
         if (!IsCountOdd())
         {
