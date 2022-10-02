@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 465059333130308677, guid: 39277331c5f0aa24a9b25af14dd77a0c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -3941583355024626588, guid: 5122272a261d0af41843986be9b7891a, type: 3}
+      objectReference: {fileID: 2100000, guid: ddd850458474bc944ad565dcce74c8c6, type: 2}
     - target: {fileID: 919132149155446097, guid: 39277331c5f0aa24a9b25af14dd77a0c, type: 3}
       propertyPath: m_Name
       value: SM_WomenSilhouette
@@ -153,6 +153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_BackSilhouette
       objectReference: {fileID: 0}
+    - target: {fileID: 6977170020513327502, guid: 6a5390b9776eceb4da82812ff6560e7e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd850458474bc944ad565dcce74c8c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a5390b9776eceb4da82812ff6560e7e, type: 3}
 --- !u!4 &8501140216596124508 stripped
