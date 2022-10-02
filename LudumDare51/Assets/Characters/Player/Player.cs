@@ -8,14 +8,22 @@ public class Player : MonoBehaviour
     private List<IPickable> pickables = new List<IPickable>();
     private IBoss bossNear;
 
-
+    [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GameObject textGiveCoffe;
     [SerializeField] Transform pickedLocation;
     [SerializeField] GameObject pickedItem;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
         CheckActionTrigger();
+        PickedItemFollowPosition();
+        UpdateAnimator();
     }
 
     private void CheckActionTrigger()
@@ -110,6 +118,30 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void PickedItemFollowPosition()
+    {
+        if (pickedItem != null)
+        {
+            pickedItem.transform.position = pickedLocation.position;
+        }
+    }
+
+    private void UpdateAnimator()
+    {
+        AnimateHoldItem(pickedItem != null);
+        AnimateIsWalking(playerMovement.IsAccelerating);
+    }
+
+    private void AnimateIsWalking(bool state)
+    {
+        animator.SetBool("IsWalking", state);
+    }
+
+    private void AnimateHoldItem(bool state)
+    {
+        animator.SetBool("HoldItem", state);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var pickable = other.GetComponent<IPickable>();
@@ -125,7 +157,7 @@ public class Player : MonoBehaviour
             {
                 textGiveCoffe.SetActive(true);
             }
-            
+
             bossNear = boss;
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool IsAccelerating => accelerating;
     [SerializeField] Rigidbody playerBody;
 
     private Vector3 velocity;
