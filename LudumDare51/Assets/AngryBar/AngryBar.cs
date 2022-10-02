@@ -18,8 +18,11 @@ public class AngryBar : MonoBehaviour, IAngryBar
     private ParticleSystem particleSystem;
     private Animator animator;
 
+    [SerializeField]
     private Color firstColor = Color.green;
+    [SerializeField]
     private Color midColor = Color.yellow;
+    [SerializeField]
     private Color lastColor = Color.red;
 
     void Awake()
@@ -66,16 +69,20 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
     private void ManageColor()
     {
+        var emission = particleSystem.emission;
         if (slider.value < 0.3f)
         {
+            emission.rateOverTime = 3;
             ChangeSliderColor(firstColor);
         }
         else if (slider.value < 0.6f)
         {
+            emission.rateOverTime = 6;
             ChangeSliderColor(midColor);
         }
         else
         {
+            emission.rateOverTime = 10;
             ChangeSliderColor(lastColor);
         }
     }

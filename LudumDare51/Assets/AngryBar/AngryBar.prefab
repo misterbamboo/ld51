@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1987,6 +1987,9 @@ ParticleSystem:
     - sprite: {fileID: -784572697860483319, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
     - sprite: {fileID: 4295607481700278294, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
     - sprite: {fileID: -8346140774392817212, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
+    - sprite: {fileID: -6709124847505651910, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
+    - sprite: {fileID: -8649870964317716156, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
+    - sprite: {fileID: 491896991449495657, guid: 2ecf419d3dd10a44aae396e6b4e23674, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5427,6 +5430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8625297034276386853}
+  firstColor: {r: 1, g: 0.47209874, b: 0.4669811, a: 1}
+  midColor: {r: 0.9245283, g: 0.17007834, b: 0.24603303, a: 1}
+  lastColor: {r: 0.4245283, g: 0, b: 0, a: 1}
 --- !u!95 &9408074718846300
 Animator:
   serializedVersion: 3
