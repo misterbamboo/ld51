@@ -121,7 +121,11 @@ public class Player : MonoBehaviour
         var boss = other.GetComponent<IBoss>();
         if (boss != null)
         {
-            textGiveCoffe.SetActive(true);
+            if (pickedItem != null)
+            {
+                textGiveCoffe.SetActive(true);
+            }
+            
             bossNear = boss;
         }
     }

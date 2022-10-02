@@ -28,6 +28,9 @@ public class Chair : MonoBehaviour
     [SerializeField]
     float characterTimeToMove = 2f;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     private Vector3 chairOriginalPosition;
 
     private Vector3 characterOriginalPosition;
@@ -64,6 +67,7 @@ public class Chair : MonoBehaviour
 
     IEnumerator LerpChairTowardPosition(Vector3 endValue, float duration)
     {
+        audioSource.Play();
         float time = 0;
         while (time < duration)
         {
@@ -72,6 +76,7 @@ public class Chair : MonoBehaviour
             yield return null;
         }
         chairTransform.position = endValue;
+        audioSource.Stop();
     }
 
     IEnumerator LerpCharacterToTarget(Vector3 targetPos)
