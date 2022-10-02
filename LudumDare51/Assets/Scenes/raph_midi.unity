@@ -411,30 +411,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 845111547144848567, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_Name
+      value: imgBossHappyFace
+      objectReference: {fileID: 0}
     - target: {fileID: 2418209603454176188, guid: 0b61622035695e44a9457cef3a141384, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 106.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555346338479855215, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_Name
-      value: imgBossFace
-      objectReference: {fileID: 0}
+    - target: {fileID: 4208980576622513498, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33cadfcc94deace408ca9f6c7d8d3b1c, type: 3}
     - target: {fileID: 8846461942359018489, guid: 0b61622035695e44a9457cef3a141384, type: 3}
       propertyPath: m_Name
       value: AngryBar
@@ -663,18 +651,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1960423424481658058, guid: 450beed8489992e4691f342545d56386, type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4297707596348125908, guid: 450beed8489992e4691f342545d56386, type: 3}
       propertyPath: npcPath
       value: 
       objectReference: {fileID: 787751954}
-    - target: {fileID: 7665129238813386423, guid: 450beed8489992e4691f342545d56386, type: 3}
-      propertyPath: angryBar
-      value: 
-      objectReference: {fileID: 319749140}
     - target: {fileID: 7665129238813386423, guid: 450beed8489992e4691f342545d56386, type: 3}
       propertyPath: _angryBar
       value: 
