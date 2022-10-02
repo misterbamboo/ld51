@@ -1,24 +1,22 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameOverScreen : MonoBehaviour
+public class WinScreen : UnityEngine.MonoBehaviour
 {
-    [SerializeField] AngryBar angryBar;
+    [UnityEngine.SerializeField] Timer timer;
 
     private void Start()
     {
-        angryBar.OnAngryBarFull += AngryBar_OnAngryBarFull;
+        timer.On5MinutesPassed += Timer_On5MinutesPassed1;
         gameObject.SetActive(false);
     }
 
-    private void AngryBar_OnAngryBarFull()
+    private void Timer_On5MinutesPassed1()
     {
         gameObject.SetActive(true);
     }
 
     public void ReloadLevel()
     {
-        angryBar.OnAngryBarFull -= AngryBar_OnAngryBarFull;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        timer.On5MinutesPassed -= Timer_On5MinutesPassed1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }

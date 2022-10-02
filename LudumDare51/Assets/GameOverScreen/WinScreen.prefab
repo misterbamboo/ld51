@@ -389,7 +389,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7930762350715144794}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
         m_MethodName: ReloadLevel
         m_Mode: 1
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 6957902559352344036}
   - component: {fileID: 6957902559352344037}
   - component: {fileID: 6957902559352344042}
-  - component: {fileID: 7930762350715144794}
+  - component: {fileID: 6926718180714149719}
   m_Layer: 0
   m_Name: WinScreen
   m_TagString: Untagged
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7930762350715144794
+--- !u!114 &6926718180714149719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -589,10 +589,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6957902559352344040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952202f51b171184392555bd71fe1749, type: 3}
+  m_Script: {fileID: 11500000, guid: bc66326cceecb5c4588db96b454f0636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angryBar: {fileID: 0}
+  timer: {fileID: 0}
 --- !u!1 &6957902559728422683
 GameObject:
   m_ObjectHideFlags: 0
