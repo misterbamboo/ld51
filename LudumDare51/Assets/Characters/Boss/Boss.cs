@@ -9,7 +9,8 @@ public class Boss : MonoBehaviour, IBoss
 {
     [SerializeField] AngryBar _angryBar;
     [SerializeField] Rigidbody bossBody;
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceMad;
+    [SerializeField] AudioSource audioSourceHappy;
  
     private float initialYPos;
 
@@ -18,6 +19,7 @@ public class Boss : MonoBehaviour, IBoss
     void Awake()
     {
         AngryBar.OnAngry += BossAngry;
+        AngryBar.OnLessAngry += BossLessAngry;
     }
 
     void Start()
@@ -43,6 +45,11 @@ public class Boss : MonoBehaviour, IBoss
 
     public void BossAngry()
     {
-        audioSource.Play();
+        audioSourceMad.Play();
+    }
+
+    public void BossLessAngry()
+    {
+        audioSourceHappy.Play();
     }
 }

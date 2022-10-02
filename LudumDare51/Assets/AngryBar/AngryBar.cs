@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public interface IAngryBar
 {
     event Action OnAngry;
+    event Action OnLessAngry;
     event Action OnAngryBarFull;
     void LessAngry();
 }
@@ -20,6 +21,7 @@ enum AngryBarState
 public class AngryBar : MonoBehaviour, IAngryBar
 {
     public event Action OnAngry;
+    public event Action OnLessAngry;
     public event Action OnAngryBarFull;
     [SerializeField] private Slider slider;
 
@@ -70,17 +72,13 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
     public void LessAngry()
     {
+        OnLessAngry();
         StartCoroutine(LerpSliderValue(slider.value, slider.value - 0.10f, 2f, true));
     }
 
     void MoreAngry()
     {
-        if(OnAngry != null)
-        {
-            OnAngry();
-        }
-
-        // lerp slider value to +10% of current value in 2 seconds
+        OnAngry();
         StartCoroutine(LerpSliderValue(slider.value, slider.value + 0.10f, 2f, false));
     }
 
