@@ -9,9 +9,16 @@ public class Boss : MonoBehaviour, IBoss
 {
     [SerializeField] AngryBar _angryBar;
     [SerializeField] Rigidbody bossBody;
+    [SerializeField] AudioSource audioSource;
+ 
     private float initialYPos;
 
     private IAngryBar AngryBar => _angryBar;
+
+    void Awake()
+    {
+        AngryBar.OnAngry += BossAngry;
+    }
 
     void Start()
     {
@@ -32,5 +39,10 @@ public class Boss : MonoBehaviour, IBoss
     {
         Destroy(pickedItem.gameObject);
         AngryBar.LessAngry();
+    }
+
+    public void BossAngry()
+    {
+        audioSource.Play();
     }
 }
