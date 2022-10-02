@@ -255,8 +255,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+      - m_Target: {fileID: 6926718180714149719}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
         m_MethodName: ReloadLevel
         m_Mode: 1
         m_Arguments:
