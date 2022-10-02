@@ -4,10 +4,10 @@ public class TextFacingCamera : MonoBehaviour
 {
     void Update()
     {
-        if (Camera.current?.transform != null)
+        if (Camera.main?.transform != null)
         {
-            transform.LookAt(Camera.current.transform);
-            transform.rotation = Quaternion.LookRotation(Camera.current.transform.forward);
+            transform.LookAt(Camera.main.transform);
+            transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward);
         }
     }
 }

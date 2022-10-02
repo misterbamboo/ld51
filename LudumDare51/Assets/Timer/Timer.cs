@@ -126,7 +126,6 @@ public class Timer : MonoBehaviour
         if (tenSecondsHavePassed)
         {
             OnTenSecondsPassed();
-            On5MinutesPassed();
         }
     }
 }
