@@ -1136,14 +1136,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3504622336454079616, guid: 85edc514d7b5e1341b1ddeaec68c944e, type: 3}
-      propertyPath: timerToPushChair
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504622336454079616, guid: 85edc514d7b5e1341b1ddeaec68c944e, type: 3}
-      propertyPath: timerToBringBackChair
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 4987882269066217680, guid: 85edc514d7b5e1341b1ddeaec68c944e, type: 3}
       propertyPath: m_Name
       value: MovingChair
