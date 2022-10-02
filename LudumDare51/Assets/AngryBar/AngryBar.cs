@@ -18,8 +18,11 @@ public class AngryBar : MonoBehaviour, IAngryBar
     private ParticleSystem particleSystem;
     private Animator animator;
 
+    [SerializeField]
     private Color firstColor = Color.green;
+    [SerializeField]
     private Color midColor = Color.yellow;
+    [SerializeField]
     private Color lastColor = Color.red;
 
     void Awake()
@@ -29,8 +32,6 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
         animator = GetComponentInChildren<Animator>();
 
-        var settings = particleSystem.main;
-        settings.startColor = firstColor;
         sliderFillImage.color = firstColor;
         GameObject.FindObjectOfType<Timer>().OnTenSecondsPassed += MoreAngry;
     }
@@ -68,16 +69,20 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
     private void ManageColor()
     {
+        var emission = particleSystem.emission;
         if (slider.value < 0.3f)
         {
+            emission.rateOverTime = 3;
             ChangeSliderColor(firstColor);
         }
         else if (slider.value < 0.6f)
         {
+            emission.rateOverTime = 6;
             ChangeSliderColor(midColor);
         }
         else
         {
+            emission.rateOverTime = 10;
             ChangeSliderColor(lastColor);
         }
     }
@@ -86,8 +91,7 @@ public class AngryBar : MonoBehaviour, IAngryBar
     {
         StartCoroutine(LerpColorSlider(sliderFillImage.color, color, duration));
         var settings = particleSystem.main;
-        StartCoroutine(LerpColorParticleSystem(settings.startColor.color, color, duration));
-
+        StartCoroutine(StartParticleSystem(2.0f));
     }
 
     IEnumerator LerpColorSlider(Color startColor, Color endColor, float duration)
@@ -104,17 +108,10 @@ public class AngryBar : MonoBehaviour, IAngryBar
     }
 
 
-    IEnumerator LerpColorParticleSystem(Color startColor, Color endColor, float duration)
+    IEnumerator StartParticleSystem(float duration)
     {
-        float time = 0f;
         particleSystem.Play();
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            var settings = particleSystem.main;
-            settings.startColor = Color.Lerp(startColor, endColor, time / duration);
-            yield return null;
-        }
+        yield return new WaitForSecondsRealtime(duration);
         particleSystem.Stop();
     }
 }

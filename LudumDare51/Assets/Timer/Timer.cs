@@ -73,7 +73,7 @@ public class Timer : MonoBehaviour
             return;
         }
 
-        var nbSecondInOneMinute = 5;
+        var nbSecondInOneMinute = 60;
         var oneMinuteHavePassed = secondsPassed % nbSecondInOneMinute == 0;
         if (oneMinuteHavePassed)
         {
@@ -103,7 +103,7 @@ public class Timer : MonoBehaviour
             return;
         }
 
-        var tenSecondsHavePassed = secondsPassed % 10 == 0;
+        var tenSecondsHavePassed = secondsPassed % 5 == 0;
         if (tenSecondsHavePassed)
         {
             OnTenSecondsPassed();
