@@ -10454,7 +10454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -34.995003
+      value: -13.165337
       objectReference: {fileID: 0}
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -10462,7 +10462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -39.996685
+      value: -4.5018473
       objectReference: {fileID: 0}
     - target: {fileID: 5955903799455666795, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_LocalScale.x
@@ -19214,7 +19214,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -22.505001
+      value: -0.67533445
       objectReference: {fileID: 0}
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -19222,7 +19222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019375045180391248, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -26.503313
+      value: 8.991525
       objectReference: {fileID: 0}
     - target: {fileID: 5955903799455666795, guid: 05e9bc21e6966044983d0c999f181035, type: 3}
       propertyPath: m_LocalRotation.w
