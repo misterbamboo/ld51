@@ -347,7 +347,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_DeskChair
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5929013755998506723, guid: 6b11cfeaa90f23c47a1a1eb917ddb777, type: 3}
+    - {fileID: 6342340173814360211, guid: 6b11cfeaa90f23c47a1a1eb917ddb777, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b11cfeaa90f23c47a1a1eb917ddb777, type: 3}
 --- !u!1 &584798542925662162 stripped
 GameObject:
