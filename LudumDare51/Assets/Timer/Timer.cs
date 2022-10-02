@@ -102,7 +102,7 @@ public class Timer : MonoBehaviour
 
     private void HandleHour()
     {
-        if(OnHourPassed == null)
+        if (OnHourPassed == null)
         {
             return;
         }
@@ -117,7 +117,7 @@ public class Timer : MonoBehaviour
 
     private void HandleTenSeconds()
     {
-        if(OnTenSecondsPassed == null)
+        if (OnTenSecondsPassed == null)
         {
             return;
         }
