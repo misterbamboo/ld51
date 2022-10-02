@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public interface IAngryBar
 {
+    event Action OnAngry;
     event Action OnAngryBarFull;
     void LessAngry();
 }
 
 public class AngryBar : MonoBehaviour, IAngryBar
 {
+    public event Action OnAngry;
     public event Action OnAngryBarFull;
     [SerializeField] private Slider slider;
 
@@ -51,6 +53,11 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
     void MoreAngry()
     {
+        if(OnAngry != null)
+        {
+            OnAngry();
+        }
+
         // lerp slider value to +10% of current value in 2 seconds
         StartCoroutine(LerpSliderValue(slider.value, slider.value + 0.10f, 2f));
     }
