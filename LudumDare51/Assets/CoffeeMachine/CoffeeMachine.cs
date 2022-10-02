@@ -4,6 +4,8 @@ public class CoffeeMachine : MonoBehaviour, IPickable
 {
     [SerializeField] GameObject coffeePrefab;
     [SerializeField] GameObject[] itemsToShowWhenPlayerNearby;
+    [SerializeField] AudioSource audioSource;
+
     public bool isPlayerNear = false;
 
     private void Start()
@@ -42,6 +44,7 @@ public class CoffeeMachine : MonoBehaviour, IPickable
 
     public GameObject PickObject()
     {
+        audioSource.Play();
         return Instantiate(coffeePrefab);
     }
 }
