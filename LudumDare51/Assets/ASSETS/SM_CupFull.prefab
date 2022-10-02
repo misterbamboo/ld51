@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f18c11dcdc2e57640a2c8b4958fd6b97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,7 +106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 346990388422127706, guid: 615711d82a593cd42a743690c3ef3cba, type: 3}
       propertyPath: m_Name
-      value: SM_FullCup
+      value: SM_CupFull
       objectReference: {fileID: 0}
     - target: {fileID: 1124511532371176160, guid: 615711d82a593cd42a743690c3ef3cba, type: 3}
       propertyPath: m_RootOrder
