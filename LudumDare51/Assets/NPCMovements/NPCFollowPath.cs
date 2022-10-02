@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class NPCFollowPath : MonoBehaviour
 {
-    private const float NearByDistance = 0.1f;
+    [SerializeField] float NearByDistance = 0.1f;
+    [SerializeField] float LerpRotationSpeed = 3f;
     [SerializeField] float speedPerUnit = 2f;
     [SerializeField] NPCPath npcPath;
     [SerializeField] bool keepNPCPosY = true;
@@ -80,7 +81,7 @@ public class NPCFollowPath : MonoBehaviour
         var sectionTargetPoint = pathToFollow[targetCheckpointIndex];
         var direction = sectionTargetPoint - transform.position;
         var targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, LerpRotationSpeed * Time.deltaTime);
     }
 
     private void CheckNextPathSection(Vector3 direction)

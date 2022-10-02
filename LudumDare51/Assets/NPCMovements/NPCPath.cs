@@ -8,6 +8,7 @@ public class NPCPath : MonoBehaviour
 
     [SerializeField] Transform[] quadraticBezierPath;
     [SerializeField] float resolution = 10;
+    [SerializeField] Color gizmosColor = Color.red;
 
     private void OnDrawGizmos()
     {
@@ -23,7 +24,7 @@ public class NPCPath : MonoBehaviour
             }
             else
             {
-                Gizmos.color = Color.red;
+                Gizmos.color = gizmosColor;
                 Gizmos.DrawLine(lastPoint, point);
                 lastPoint = point;
             }
