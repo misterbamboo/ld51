@@ -191,8 +191,8 @@ MonoBehaviour:
   target: {fileID: 1538706425482499025}
   chairTransform: {fileID: 240467048582372712}
   characterTransform: {fileID: 7292049614219695482}
-  timerToPushChair: 5
-  timerToBringBackChair: 5
+  timerToPushChair: 20
+  timerToBringBackChair: 30
   chairTimeToMove: 2
   characterTimeToMove: 2
   audioSource: {fileID: 4456299257540127245}
