@@ -11,7 +11,9 @@ public class Boss : MonoBehaviour, IBoss
     [SerializeField] Rigidbody bossBody;
     [SerializeField] AudioSource audioSourceMad;
     [SerializeField] AudioSource audioSourceHappy;
- 
+
+    private Animator animator;
+
     private float initialYPos;
 
     private IAngryBar AngryBar => _angryBar;
@@ -25,6 +27,7 @@ public class Boss : MonoBehaviour, IBoss
     void Start()
     {
         initialYPos = transform.position.y;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -46,6 +49,7 @@ public class Boss : MonoBehaviour, IBoss
     public void BossAngry()
     {
         audioSourceMad.Play();
+        animator.SetTrigger("GetAngry");
     }
 
     public void BossLessAngry()
