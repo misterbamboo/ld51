@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_BackSilhouette
       objectReference: {fileID: 0}
+    - target: {fileID: 6977170020513327502, guid: 6a5390b9776eceb4da82812ff6560e7e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd850458474bc944ad565dcce74c8c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a5390b9776eceb4da82812ff6560e7e, type: 3}
 --- !u!4 &2588001244975474958 stripped
@@ -149,6 +153,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_ManSilhouette
       objectReference: {fileID: 0}
+    - target: {fileID: 4412164318142059753, guid: d831392aca73f7a40a4990b26edd7a71, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd850458474bc944ad565dcce74c8c6, type: 2}
+    - target: {fileID: 4412164318142059753, guid: d831392aca73f7a40a4990b26edd7a71, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd850458474bc944ad565dcce74c8c6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d831392aca73f7a40a4990b26edd7a71, type: 3}
 --- !u!4 &7229526946335910949 stripped
