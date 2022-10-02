@@ -10,12 +10,38 @@ public class NPCPath : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        var path = ComputePath();
+        Vector3 lastPoint = Vector3.one;
+        foreach (var point in path)
+        {
+            if (lastPoint == Vector3.one)
+            {
+                lastPoint = point;
+                continue;
+            }
+            else
+            {
+                Debug.DrawLine(lastPoint, point, Color.green);
+                lastPoint = point;
+            }
+        }
+    }
+
+    private Vector3[] ComputePath()
+    {
         if (!IsCountOdd())
         {
             print("Info: NPCPath should have a odd number of points to work");
-            return;
+            return new Vector3[0];
         }
 
+        if (resolution < 0)
+        {
+            print("Info: NPCPath can't have a negative resolution");
+            return new Vector3[0];
+        }
+
+        List<Vector3> path = new List<Vector3>();
         for (int i = 0; i + 2 < quadraticBezierPath.Length; i += 2)
         {
             var startP = quadraticBezierPath[i].position;
@@ -23,17 +49,18 @@ public class NPCPath : MonoBehaviour
             var endP = quadraticBezierPath[i + 2].position;
 
             var lastLine = startP;
+            path.Add(startP);
             Vector3 pr = Vector3.zero;
             for (float t = 0; t <= 1; t += 1f / resolution)
             {
                 pr = ComputeBezierPoint(startP, mildBezierP, endP, t);
-                Debug.DrawLine(lastLine, pr, Color.green);
+                path.Add(pr);
                 lastLine = pr;
             }
 
-            pr = ComputeBezierPoint(startP, mildBezierP, endP, 1);
-            Debug.DrawLine(lastLine, pr, Color.green);
+            path.Add(endP);
         }
+        return path.ToArray();
     }
 
     private static Vector3 ComputeBezierPoint(Vector3 p1, Vector3 p2, Vector3 p3, float t)
@@ -47,11 +74,5 @@ public class NPCPath : MonoBehaviour
     private bool IsCountOdd()
     {
         return (quadraticBezierPath.Length - 1) % 2 == 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
