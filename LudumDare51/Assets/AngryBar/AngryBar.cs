@@ -16,6 +16,8 @@ public class AngryBar : MonoBehaviour, IAngryBar
     public event Action OnAngryBarFull;
     [SerializeField] private Slider slider;
 
+    [SerializeField] private Image imgBossFace;
+
     private Image sliderFillImage;
     private ParticleSystem particleSystem;
     private Animator animator;
@@ -34,6 +36,8 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
         animator = GetComponentInChildren<Animator>();
 
+        imgBossFace.enabled = false;
+
         sliderFillImage.color = firstColor;
         GameObject.FindObjectOfType<Timer>().OnTenSecondsPassed += MoreAngry;
     }
@@ -48,7 +52,7 @@ public class AngryBar : MonoBehaviour, IAngryBar
 
     public void LessAngry()
     {
-        StartCoroutine(LerpSliderValue(slider.value, slider.value - 0.10f, 2f));
+        StartCoroutine(LerpSliderValue(slider.value, slider.value - 0.10f, 2f, true));
     }
 
     void MoreAngry()
@@ -59,12 +63,12 @@ public class AngryBar : MonoBehaviour, IAngryBar
         }
 
         // lerp slider value to +10% of current value in 2 seconds
-        StartCoroutine(LerpSliderValue(slider.value, slider.value + 0.10f, 2f));
+        StartCoroutine(LerpSliderValue(slider.value, slider.value + 0.10f, 2f, false));
     }
 
-    IEnumerator LerpSliderValue(float startValue, float endValue, float duration)
+    IEnumerator LerpSliderValue(float startValue, float endValue, float duration, bool isLessAngry)
     {
-        ManageColor();
+        ManageColor(isLessAngry);
         float time = 0f;
         while (time < duration)
         {
@@ -74,36 +78,45 @@ public class AngryBar : MonoBehaviour, IAngryBar
         }
     }
 
-    private void ManageColor()
+    private void ManageColor(bool isLessAngry)
     {
         var emission = particleSystem.emission;
         if (slider.value < 0.3f)
         {
             emission.rateOverTime = 3;
-            ChangeSliderColor(firstColor);
+            ChangeSliderColor(firstColor, isLessAngry);
         }
         else if (slider.value < 0.6f)
         {
             emission.rateOverTime = 6;
-            ChangeSliderColor(midColor);
+            ChangeSliderColor(midColor, isLessAngry);
         }
         else
         {
             emission.rateOverTime = 10;
-            ChangeSliderColor(lastColor);
+            ChangeSliderColor(lastColor, isLessAngry);
         }
     }
 
-    public void ChangeSliderColor(Color color, float duration = 2.0f)
+    public void ChangeSliderColor(Color color, bool isLessAngry, float duration = 2.0f)
     {
-        StartCoroutine(LerpColorSlider(sliderFillImage.color, color, duration));
+        StartCoroutine(LerpColorSlider(sliderFillImage.color, color, duration, isLessAngry));
         var settings = particleSystem.main;
-        StartCoroutine(StartParticleSystem(2.0f));
+
+        print("isLessAngry: " + isLessAngry);
+        if (!isLessAngry)
+        {
+            StartCoroutine(StartAngryParticleSystem(duration));
+        }        
     }
 
-    IEnumerator LerpColorSlider(Color startColor, Color endColor, float duration)
+    IEnumerator LerpColorSlider(Color startColor, Color endColor, float duration, bool isLessAngry)
     {
-        animator.SetBool("Play", true);
+        if(!isLessAngry)
+        {
+            animator.SetBool("Play", true);
+        }
+
         float time = 0f;
         while (time < duration)
         {
@@ -111,15 +124,22 @@ public class AngryBar : MonoBehaviour, IAngryBar
             sliderFillImage.color = Color.Lerp(startColor, endColor, time / duration);
             yield return null;
         }
-        animator.SetBool("Play", false);
+
+        if(!isLessAngry)
+        {
+            animator.SetBool("Play", false);
+        }
+
     }
 
 
-    IEnumerator StartParticleSystem(float duration)
+    IEnumerator StartAngryParticleSystem(float duration)
     {
+        imgBossFace.enabled = true;
         particleSystem.Play();
         yield return new WaitForSecondsRealtime(duration);
         particleSystem.Stop();
+        imgBossFace.enabled = false;
     }
 }
 

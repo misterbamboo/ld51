@@ -415,6 +415,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899953361310588414, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555346338479855215, guid: 0b61622035695e44a9457cef3a141384, type: 3}
+      propertyPath: m_Name
+      value: imgBossFace
+      objectReference: {fileID: 0}
     - target: {fileID: 8846461942359018489, guid: 0b61622035695e44a9457cef3a141384, type: 3}
       propertyPath: m_Name
       value: AngryBar
@@ -502,14 +522,6 @@ PrefabInstance:
     - target: {fileID: 8846461942359018493, guid: 0b61622035695e44a9457cef3a141384, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9102626013419644254, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -342
-      objectReference: {fileID: 0}
-    - target: {fileID: 9102626013419644254, guid: 0b61622035695e44a9457cef3a141384, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b61622035695e44a9457cef3a141384, type: 3}
