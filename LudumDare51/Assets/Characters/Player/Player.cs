@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     private List<IPickable> pickables = new List<IPickable>();
     private IBoss bossNear;
 
+
+    [SerializeField] GameObject textGiveCoffe;
     [SerializeField] Transform pickedLocation;
     [SerializeField] GameObject pickedItem;
 
@@ -119,6 +121,7 @@ public class Player : MonoBehaviour
         var boss = other.GetComponent<IBoss>();
         if (boss != null)
         {
+            textGiveCoffe.SetActive(true);
             bossNear = boss;
         }
     }
@@ -134,6 +137,7 @@ public class Player : MonoBehaviour
         var boss = other.GetComponent<IBoss>();
         if (boss != null)
         {
+            textGiveCoffe.SetActive(false);
             bossNear = null;
         }
     }

@@ -34,6 +34,8 @@ public class Chair : MonoBehaviour
 
     void Awake()
     {
+        target.GetComponent<MeshRenderer>().enabled = false;
+
         chairOriginalPosition = chairTransform.position;
         characterOriginalPosition = characterTransform.position;
 
