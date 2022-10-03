@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -15,6 +12,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] Camera loseCamera;
 
     [SerializeField] AngryBar angryBar;
+    private bool gameEnded;
 
     void Start()
     {
@@ -37,6 +35,9 @@ public class CameraController : MonoBehaviour
 
     private void Lose()
     {
+        if (gameEnded) return;
+        gameEnded = true;
+
         var followPath = boss.GetComponent<NPCFollowPath>();
         followPath.enabled = false;
 
@@ -51,6 +52,9 @@ public class CameraController : MonoBehaviour
 
     private void Win()
     {
+        if (gameEnded) return;
+        gameEnded = true;
+
         watch.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(false);
         winCamera.gameObject.SetActive(true);
